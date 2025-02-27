@@ -1,0 +1,15 @@
+{
+    "toteutuksen_nimi": "Digitekniikat",
+    "osallistujia": 5,
+    "osallistujat": [
+        "Matti Meikäläinen",
+        "Anna Esimerkki",
+        "Teppo Testaaja",
+        "Laura Oppija",
+        "Kalle Koodari"
+    ],
+    "alkamispaiva": "13.1.2025",
+    "loppumispaiva": "14.3.2025",
+    "kesto_viikkoina": 8,
+    "kuva": "https://example.com/kuva.jpg"
+}

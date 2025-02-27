@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toteutuksen tiedot</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Etusivu</a>
+        <a href="toteutus.html">Toteutus</a>
+    </nav>
+
+    <h1>Toteutuksen tiedot</h1>
+    <div id="vastaus"></div>
+
+    <script>
+        fetch('https://redz85-byte.github.io/datajson/toteutus.json')
+            .then(response => response.json())
+            .then(data => {
+                let html = `<h2>${data.toteutuksen_nimi}</h2>`;
+                html += `<p>Osallistujia: ${data.osallistujia} kpl</p>`;
+                html += `<h3>Osallistujat</h3><ul>`;
+                data.osallistujat.forEach(nimi => {
+                    html += `<li>${nimi}</li>`;
+                });
+                html += `</ul>`;
+                html += `<p>Ajankohta: ${data.alkamispaiva} – ${data.loppumispaiva}</p>`;
+                html += `<p>Kesto: ${data.kesto_viikkoina} viikkoa</p>`;
+                html += `<img src="${data.kuva}" alt="Toteutuksen kuva" width="300">`;
+
+                document.getElementById("vastaus").innerHTML = html;
+            })
+            .catch(error => {
+                document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
+            });
+    </script>
+</body>
+
+</html>
