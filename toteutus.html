@@ -15,6 +15,7 @@
 
     <h1>Toteutuksen tiedot</h1>
     <div id="vastaus"></div>
+   
 
     <script>
         fetch('https://redz85-byte.github.io/Toteutusjson/toteutus.json')
@@ -29,6 +30,7 @@
                 html += `</ul>`;
                 html += `<p>Ajankohta: ${data.alkamispaiva} – ${data.loppumispaiva}</p>`;
                 html += `<p>Kesto: ${data.kesto_viikkoina} viikkoa</p>`;
+                console.log("Kuvan URL:", data.kuva);
                 html += `<img src="${data.kuva}" alt="Toteutuksen kuva" width="300">`;
 
                 document.getElementById("vastaus").innerHTML = html;
